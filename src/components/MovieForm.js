@@ -34,7 +34,8 @@ const MovieForm = () => {
     const [formData, setFormData] = useState({
         name: "",
         year: "",
-        hours: ""
+        duration: "",
+        budget: ""
     });
 
     const handleChange = (e) => {
@@ -54,7 +55,7 @@ const MovieForm = () => {
                 />
             </FormField>
             <FormField>
-                <Label>Año de estreno:</Label>
+                <Label>Fecha de estreno:</Label>
                 <Input
                     type="text"
                     name="year"
@@ -63,10 +64,19 @@ const MovieForm = () => {
                 />
             </FormField>
             <FormField>
-                <Label>Duración (horas):</Label>
+                <Label>Duración (minutos):</Label>
                 <Input
                     type="text"
-                    name="hours"
+                    name="duration"
+                    value={formData.duration}
+                    onChange={handleChange}
+                />
+            </FormField>
+            <FormField>
+                <Label>Presupuesto:</Label>
+                <Input
+                    type="text"
+                    name="budget"
                     value={formData.hours}
                     onChange={handleChange}
                 />
