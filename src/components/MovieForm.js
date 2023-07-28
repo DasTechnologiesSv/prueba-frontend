@@ -33,7 +33,7 @@ const Button = styled.button`
 const MovieForm = () => {
     const [formData, setFormData] = useState({
         name: "",
-        year: "",
+        date: "",
         duration: "",
         budget: ""
     });
@@ -66,15 +66,15 @@ const MovieForm = () => {
                 <Label>Fecha de estreno:</Label>
                 <Input
                     type="text"
-                    name="year"
-                    value={formData.year}
+                    name="date"
+                    value={formData.date}
                     onChange={handleChange}
                 />
             </FormField>
             <FormField>
                 <Label>Duración (minutos):</Label>
                 <Input
-                    type="text"
+                    type="number"
                     name="duration"
                     value={formData.duration}
                     onChange={handleChange}
@@ -83,9 +83,9 @@ const MovieForm = () => {
             <FormField>
                 <Label>Presupuesto:</Label>
                 <Input
-                    type="text"
+                    type="number"
                     name="budget"
-                    value={formData.hours}
+                    value={formData.budget}
                     onChange={handleChange}
                 />
             </FormField>
