@@ -43,6 +43,14 @@ const MovieForm = () => {
         setFormData({ ...formData, [name]: value });
     };
 
+    const handleFormSubmit = async () => {
+        try {
+            await handleSubmit(formData);
+        } catch (error) {
+            console.error("Error submitting data:", error);
+        }
+    };
+
     return (
         <FormWrapper>
             <FormField>
@@ -81,7 +89,7 @@ const MovieForm = () => {
                     onChange={handleChange}
                 />
             </FormField>
-            <Button onClick={handleSubmit}>Guardar</Button>
+            <Button onClick={handleFormSubmit}>Guardar</Button>
         </FormWrapper>
     );
 };
